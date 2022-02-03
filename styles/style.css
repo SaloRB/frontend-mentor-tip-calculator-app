@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-cyan-100: hsl(189, 41%, 97%);
+  --light-grayish-cyan-200: hsl(185, 41%, 84%);
+  --dark-grayish-cyan-100: hsl(184, 14%, 56%);
+  --dark-grayish-cyan-200: hsl(186, 14%, 43%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: var(--light-grayish-cyan-200);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+main {
+  background-color: var(--white);
+  width: 375px;
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  color: var(--dark-grayish-cyan-200);
+}
+
+ul {
+  list-style: none;
+}
+
+.bill {
+  margin-bottom: 1rem;
+}
+
+.input {
+  position: relative;
+}
+
+.number {
+  font-family: inherit;
+  width: 100%;
+  padding: 0.25rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+  background-color: var(--light-grayish-cyan-100);
+  border: 2px solid transparent;
+  text-align: right;
+}
+
+.number:focus {
+  outline: none;
+  border: 2px solid hsl(172, 69%, 69%);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.controls .control {
+  position: relative;
+  background: var(--very-dark-cyan);
+  text-align: center;
+  border-radius: 0.5rem;
+  font-size: 24px;
+  color: var(--white);
+  cursor: pointer;
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control_number {
+  font-family: inherit;
+  padding: 0.25rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+  background: var(--light-grayish-cyan-100);
+  border: 2px solid transparent;
+  width: 140px;
+}
+
+.control_number:focus {
+  outline: none;
+  border: 2px solid hsl(172, 69%, 69%);
+}
+
+.controls .control label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.controls .control label:hover {
+  background: hsl(172, 69%, 69%);
+  color: var(--very-dark-cyan);
+}
+
+[type='radio'] {
+  opacity: 0;
+}
+
+[type='radio']:checked ~ label {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.people {
+  margin-top: 2rem;
+}
+
+.results {
+  margin-top: 2rem;
+  background-color: var(--very-dark-cyan);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.amount,
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.amount h2,
+.total h2 {
+  color: var(--white);
+}
+
+.amount h3,
+.total h3 {
+  color: var(--strong-cyan);
+  font-size: 32px;
+}
+
+.amount h2 span,
+.total h2 span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--dark-grayish-cyan-100);
+}
+
+button#reset {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  font-size: 1rem;
+  font-weight: 700;
+  width: 100%;
+  padding: 1rem 0rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+}
+
+button#reset:hover {
+  background-color: hsl(172, 69%, 69%);
+}
+
+/* Remove number controls */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+/* Remove number controls */
+
+@media screen and (min-width: 1100px) {
+  main {
+    width: 920px;
+    height: 485px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .options {
+    width: 415px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .bill {
+    margin-bottom: 0;
+  }
+
+  .tip {
+    position: absolute;
+    top: 130px;
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    height: 48px;
+  }
+
+  .controls .control {
+    width: 120px;
+    padding: 1rem;
+  }
+
+  .controls .control label {
+    font-weight: 700;
+  }
+
+  .people {
+    margin-top: 0;
+  }
+
+  .results {
+    width: 415px;
+    margin: 0;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .amount h3 {
+    font-size: 48px;
+  }
+
+  .total h3 {
+    font-size: 48px;
+  }
+
+  .reset {
+    margin-top: auto;
+  }
+}
