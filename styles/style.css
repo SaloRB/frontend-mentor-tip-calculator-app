@@ -196,6 +196,10 @@ button#reset:hover {
   background-color: hsl(172, 69%, 69%);
 }
 
+button#reset:disabled {
+  background-color: hsl(183, 79%, 24%);  
+}
+
 /* Remove number controls */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
